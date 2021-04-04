@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  `postgres://psodlwqogvcxvp:5626392dae222d0f33c26f8725a155dc95c0423ea0612628dfebd65cb4a97064@ec2-54-235-108-217.compute-1.amazonaws.com:5432/d22mpv9rjdcdlm`,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
