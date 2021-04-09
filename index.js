@@ -21,8 +21,12 @@ const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
-  server.listen(process.env.PORT, () => {
-    console.log("listening at 3001"); // eslint-disable-line no-console
+//Set Port default 3000 o el que este disponible.
+server.set('port', process.env.PORT || 3001 );
+
+// Syncing all the models at once.
+conn.sync({ force: true }).then(() => {
+  server.listen(server.get('port'), () => {
+    console.log(`listening at ${server.get('port')}`); // eslint-disable-line no-console
   });
 });
